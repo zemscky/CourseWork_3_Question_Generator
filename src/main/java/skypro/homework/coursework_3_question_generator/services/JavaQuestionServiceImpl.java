@@ -6,10 +6,11 @@ import skypro.homework.coursework_3_question_generator.model.Question;
 import java.util.*;
 
 @Service
-public class JavaQuestionServiceImpl implements QuestionService{
+public class JavaQuestionServiceImpl implements QuestionService {
 
     private final Set<Question> questions = new HashSet<>();
     private final static Random random = new Random();
+
     @Override
     public Question add(String question, String answer) {
         Question questionObject = new Question(question, answer);
@@ -36,14 +37,10 @@ public class JavaQuestionServiceImpl implements QuestionService{
 
     @Override
     public Question getRandomQuestion() {
-        if (questions.isEmpty()){
+        if (questions.isEmpty()) {
             return null;
         }
-        return this.questions
-                .stream()
-                .skip(random.nextInt(0, this.questions.size()))
-                .findFirst()
-                .orElseThrow();
+        return this.questions.stream().skip(random.nextInt(0, this.questions.size())).findFirst().orElseThrow();
     }
 
 }

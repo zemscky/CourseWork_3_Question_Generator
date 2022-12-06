@@ -1,5 +1,6 @@
 ### Добавить вопрос-ответ
 GET http://localhost:8080/exam/java/add?question=q1&answer=a1
+
 ### Добавить вопрос-ответ
 GET http://localhost:8080/exam/java/add?question=q2&answer=a2
 ### Добавить вопрос-ответ

@@ -7,7 +7,7 @@ import skypro.homework.coursework_3_question_generator.services.JavaQuestionServ
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/exam/java")
+@RequestMapping("/exam")
 public class JavaQuestionController {
     private final JavaQuestionServiceImpl javaQuestionService;
 
@@ -15,15 +15,13 @@ public class JavaQuestionController {
         this.javaQuestionService = javaQuestionService;
     }
 
-    @PutMapping("/add")
-    public Question addQuestion(@RequestParam("question") String question,
-                                @RequestParam("answer") String answer) {
+    @PutMapping("/java/add")
+    public Question addQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
         return this.javaQuestionService.add(question, answer);
     }
 
-    @DeleteMapping("/remove")
-    public Question removeQuestion(@RequestParam("question") String question,
-                                   @RequestParam("answer") String answer) {
+    @DeleteMapping("/java/remove")
+    public Question removeQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
         Question q = new Question(question, answer);
         return this.javaQuestionService.remove(q);
     }

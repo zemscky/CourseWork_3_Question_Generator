@@ -16,9 +16,7 @@ public class ExamController {
 
     @ExceptionHandler(UnSufficentQuestionsExceptions.class)
     public ResponseEntity<String> handlerException() {
-        return ResponseEntity
-                .badRequest()
-                .body("Недостаточно вопросов");
+        return ResponseEntity.badRequest().body("Недостаточно вопросов");
     }
 
     public ExamController(ExaminerService examinerService) {
